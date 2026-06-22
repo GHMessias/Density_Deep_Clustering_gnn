@@ -1,0 +1,28 @@
+run:
+  experiment: node_feature_clustering
+  seed: 42
+
+dataset:
+  loader: twitch
+  name: PT
+  root: data/raw
+
+algorithm:
+  name: gae_kmeans_embeddings
+  params:
+    n_clusters: auto
+    encoder_hidden_channels: 128
+    embedding_channels: 32
+    epochs: 200
+    learning_rate: 0.005
+    weight_decay: 0.0
+    dropout: 0.0
+    device: auto
+    n_init: 20
+    max_iter: 300
+    scale_embeddings: true
+
+output:
+  dir: results/final_inputs/twitch/gae_kmeans_embeddings
+  save_assignments: true
+  save_features: true

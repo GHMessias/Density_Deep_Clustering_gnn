@@ -1,0 +1,28 @@
+run:
+  experiment: node_feature_clustering
+  seed: 42
+
+dataset:
+  loader: planetoid
+  name: Cora
+  root: data/raw
+
+algorithm:
+  name: ollivier_ricci_community
+  params:
+    ricci:
+      alpha: 0.5
+      method: OTDSinkhornMix
+      proc: 1
+      verbose: ERROR
+    flow:
+      iterations: 10
+      step: 1.0
+      delta: 0.0001
+    community:
+      cutoff_step: 0.025
+      drop_threshold: 0.01
+
+output:
+  dir: results/cora/ollivier_ricci_community
+  save_assignments: true

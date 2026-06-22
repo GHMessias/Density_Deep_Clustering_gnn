@@ -1,0 +1,16 @@
+base_config: configs/cora_densgnn.yaml
+ranking_metric: best_eval_nmi
+output_root: results/grid_search/densgnn_cora
+
+search_space:
+  algorithm.params.epochs: [100]
+  algorithm.params.learning_rate: [0.01, 0.005]
+  algorithm.params.clustering_loss_gamma: [0.5, 1.0, 5.0]
+  algorithm.params.point_selection: [core, border]
+  algorithm.params.point_probability_threshold: [0.3, 0.5, 0.7]
+  algorithm.params.hdbscan_min_cluster_size: [10]
+  algorithm.params.hdbscan_min_samples: [5]
+  algorithm.params.mrd_k: [5]
+  algorithm.params.warmup_epochs: [5]
+  algorithm.params.update_p_interval: [5]
+  algorithm.params.evaluation_interval: [5]

@@ -1,0 +1,37 @@
+run:
+  experiment: node_feature_clustering
+  seed: 42
+
+dataset:
+  loader: planetoid
+  name: Cora
+  root: data/raw
+
+algorithm:
+  name: densgnn
+  params:
+    encoder_hidden_channels: 128
+    embedding_channels: 32
+    epochs: 500
+    warmup_epochs: 5
+    learning_rate: 0.005
+    weight_decay: 0.0
+    dropout: 0.0
+    # clustering_loss_gamma: 10.0
+    clustering_loss_gamma: 1.0
+    update_p_interval: 5
+    point_selection: border
+    point_probability_threshold: 0.5
+    hdbscan_min_cluster_size: 10
+    hdbscan_min_samples: 5
+    hdbscan_cluster_selection_method: eom
+    mrd_k: 5
+    device: auto
+    verbose: false
+    log_interval: 1
+    evaluation_interval: 5
+
+output:
+  dir: results/cora/densgnn
+  save_assignments: true
+  save_features: true

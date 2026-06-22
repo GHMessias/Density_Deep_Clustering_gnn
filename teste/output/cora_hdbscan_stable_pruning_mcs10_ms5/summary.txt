@@ -1,0 +1,22 @@
+Resumo do teste exploratorio no Cora
+device=cpu
+epochs=3
+min_cluster_size=10
+min_samples=5
+target_k=7
+selected_k=6
+raw_cluster_count=4
+raw_noise_count=1748
+covered_points=233
+noise_points_after_pruning=2475
+projection_path=teste/output/cora_hdbscan_stable_pruning_mcs10_ms5/projection_overview.png
+tree_path=teste/output/cora_hdbscan_stable_pruning_mcs10_ms5/condensed_tree.png
+csv_path=teste/output/cora_hdbscan_stable_pruning_mcs10_ms5/assignments.csv
+final_recon_loss=1.295708
+selected_nodes=
+  grupo=00 node=2715 stability=123.314116 size=102
+  grupo=01 node=2713 stability=22.685568 size=19
+  grupo=02 node=2718 stability=19.778414 size=54
+  grupo=03 node=2717 stability=16.701238 size=31
+  grupo=04 node=2709 stability=4.001516 size=15
+  grupo=05 node=2711 stability=3.230280 size=12

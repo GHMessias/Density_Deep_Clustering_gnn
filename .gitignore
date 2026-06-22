@@ -205,3 +205,12 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Benchmark artifacts
+data/raw/*
+!data/raw/.gitkeep
+results/*
+!results/.gitkeep
+
+DGCSS/
+GenCAT/

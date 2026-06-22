@@ -1,0 +1,33 @@
+run:
+  experiment: node_feature_clustering
+  seed: 42
+
+dataset:
+  loader: planetoid
+  name: CiteSeer
+  root: data/raw
+
+algorithm:
+  name: dgcss
+  params:
+    n_clusters: auto
+    seed_selector: betweenness_centrality
+    encoder_hidden_channels: 128
+    embedding_channels: 32
+    epochs: 200
+    learning_rate: 0.005
+    weight_decay: 0.0
+    dropout: 0.0
+    attention_heads: 2
+    transition_hops: 3
+    clustering_loss_gamma: 20.0
+    p_update_interval: 10
+    centroid_update_step_size: 0.1
+    reselect_centroids: false
+    reselect_patience: 100
+    device: auto
+
+output:
+  dir: results/final_inputs/cora/dgcss_bc
+  save_assignments: true
+  save_features: true

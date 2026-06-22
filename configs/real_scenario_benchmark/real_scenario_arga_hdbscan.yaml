@@ -1,0 +1,32 @@
+run:
+  experiment: node_feature_clustering
+  seed: 42
+
+dataset:
+  loader: planetoid
+  name: Cora
+  root: data/raw
+
+algorithm:
+  name: arga_hdbscan_embeddings
+  params:
+    encoder_hidden_channels: 128
+    embedding_channels: 32
+    discriminator_hidden_channels: 64
+    epochs: 200
+    learning_rate: 0.005
+    discriminator_learning_rate: 0.001
+    weight_decay: 0.0
+    dropout: 0.0
+    reg_loss_weight: 1.0
+    discriminator_steps: 1
+    min_cluster_size: 20
+    min_samples: 10
+    cluster_selection_method: eom
+    scale_embeddings: true
+    device: auto
+
+output:
+  dir: results/real_scenario_benchmark/real_scenario_arga_hdbscan
+  save_assignments: true
+  save_features: true

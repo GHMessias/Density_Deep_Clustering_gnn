@@ -1,0 +1,21 @@
+run:
+  experiment: node_feature_clustering
+  seed: 42
+
+dataset:
+  loader: polblogs
+  name: PolBlogs
+  root: data/raw
+
+algorithm:
+  name: kmeans_features
+  params:
+    n_clusters: auto
+    n_init: 20
+    max_iter: 300
+    scale_features: true
+
+output:
+  dir: results/final_inputs/cora/kmeans_features
+  save_assignments: true
+  save_features: true
